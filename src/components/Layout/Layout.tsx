@@ -6,27 +6,36 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import MoreIcon from '@material-ui/icons/MoreVert';
-
 import SwipeableDrawer, {SwipeableDrawerProps} from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import Hidden from "@material-ui/core/Hidden";
+import Badge from '@material-ui/core/Badge';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import MoreIcon from '@material-ui/icons/MoreVert';
+import HomeIcon from '@material-ui/icons/Home';
+
+import {HOME_PAGE_ROUTE_PATH} from "../../pages/HomePage";
+import {FAVORITE_PAGE_ROUTE_PATH} from "../../pages/FavoritesPage";
+import {USE_TERMS_PAGE_ROUTE_PATH} from "../../pages/UseTermsPage";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import {SEARCH_PAGE_ROUTE_PATH} from "../../pages/SearchPage";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        grow: {
-            flexGrow: 1,
+        toolbar: {
+            display: 'flex',
+            alignItems: 'center'
+        },
+        toolbarTitle: {
+            display: 'flex',
+            alignItems: 'center'
         },
         menuButton: {
             marginRight: theme.spacing(2),
@@ -37,6 +46,14 @@ const useStyles = makeStyles((theme: Theme) =>
                 display: 'block',
             },
         },
+        titleLink: {
+            color: 'inherit',
+            textDecoration: 'none',
+            '&:hover': {
+                opacity: .8
+            },
+            transition: '280ms'
+        },
         search: {
             position: 'relative',
             borderRadius: theme.shape.borderRadius,
@@ -44,13 +61,14 @@ const useStyles = makeStyles((theme: Theme) =>
             '&:hover': {
                 backgroundColor: fade(theme.palette.common.white, 0.25),
             },
-            marginRight: theme.spacing(2),
-            marginLeft: 0,
-            width: '100%',
-            [theme.breakpoints.up('sm')]: {
-                marginLeft: theme.spacing(3),
-                width: 'auto',
+            '&:active': {
+                backgroundColor: fade(theme.palette.common.white, 0.20),
             },
+            width: '100%',
+            maxWidth: 480,
+            transition: '280ms',
+            marginLeft: 'auto',
+            marginRight: theme.spacing(1)
         },
         searchIcon: {
             width: theme.spacing(7),
@@ -63,13 +81,14 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         inputRoot: {
             color: 'inherit',
+            width: '100%'
         },
         inputInput: {
             padding: theme.spacing(1, 1, 1, 7),
             transition: theme.transitions.create('width'),
             width: '100%',
             [theme.breakpoints.up('md')]: {
-                width: 200,
+                padding: theme.spacing(1.5, 1.5, 1.5, 7),
             },
         },
         sectionDesktop: {
@@ -109,27 +128,29 @@ export default function(props: LayoutProps) {
     };
 
     return (
-        <div className={classes.grow}>
+        <React.Fragment>
             <AppBar position="sticky">
-                <Toolbar>
-                    <IconButton
-                        edge="start"
-                        className={classes.menuButton}
-                        onClick={toggleDrawer}
-                        color="inherit"
-                        aria-label="open drawer"
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography className={classes.title} variant="h6" noWrap>
-                        <Link to={'/'}>Билеты в театр</Link>
-                    </Typography>
+                <Toolbar className={classes.toolbar}>
+                    <div className={classes.toolbarTitle}>
+                        <IconButton
+                            edge="start"
+                            className={classes.menuButton}
+                            onClick={toggleDrawer}
+                            color="inherit"
+                            aria-label="open drawer"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography className={classes.title} variant="h6" noWrap>
+                            <Link to={HOME_PAGE_ROUTE_PATH} className={classes.titleLink}>Билеты в театр</Link>
+                        </Typography>
+                    </div>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />
                         </div>
                         <InputBase
-                            placeholder="Поиск спектакля"
+                            placeholder="Спектакли, артисты"
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
@@ -137,9 +158,13 @@ export default function(props: LayoutProps) {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
-                        <IconButton aria-label="favorites" color="inherit" component={Link} to={'/favorites'}>
+                        <IconButton
+                            aria-label="favorites"
+                            color="inherit"
+                            component={Link}
+                            to={FAVORITE_PAGE_ROUTE_PATH}
+                        >
                             <Badge badgeContent={4} color="secondary">
                                 <FavoriteIcon />
                             </Badge>
@@ -169,8 +194,13 @@ export default function(props: LayoutProps) {
                 onOpen={toggleDrawer}
                 onClose={toggleDrawer}
             />
-            <main>{props.children}</main>
-        </div>
+            <main>
+                {props.children}
+            </main>
+            <Hidden only={['xl', 'lg', 'md']}>
+                <LayoutBottomNavigation />
+            </Hidden>
+        </React.Fragment>
     );
 }
 
@@ -187,25 +217,84 @@ const useDrawerStyles = makeStyles((theme: Theme) =>
         }
     })
 );
+
 function Drawer(props: SwipeableDrawerProps) {
     const classes = useDrawerStyles();
     return (
         <SwipeableDrawer {...props}>
             <div className={classes.container}>
-                <List component="nav" aria-label="secondary mailbox folders">
-                    <ListItem button>
-                        <ListItemText primary="Trash" />
+                <List component="nav" aria-label="drawer navigation">
+                    <ListItem
+                        button
+                        component={Link}
+                        to={HOME_PAGE_ROUTE_PATH}
+                        onClick={props.onClose}
+                    >
+                        <ListItemText primary="Главная" />
                     </ListItem>
                 </List>
                 <footer className={classes.footer}>
                     <Divider />
-                    <List component="nav" aria-label="drawer content">
-                        <ListItem component={Link} to={'/terms-of-use'}>
+                    <List component="nav" aria-label="drawer footer">
+                        <ListItem
+                            button
+                            component={Link}
+                            to={USE_TERMS_PAGE_ROUTE_PATH}
+                            onClick={props.onClose}
+                        >
                             <ListItemText primary="Условия использования" />
                         </ListItem>
                     </List>
                 </footer>
             </div>
         </SwipeableDrawer>
+    );
+}
+
+const useBottomNavigationStyles = makeStyles({
+    root: {
+        position: 'fixed',
+        left: 0,
+        right: 0,
+        bottom: 0
+    },
+});
+
+function LayoutBottomNavigation() {
+    const classes = useBottomNavigationStyles();
+    const [value, setValue] = React.useState(0);
+    const handleChanged = () => console.log('changed');
+
+    window.removeEventListener('hashchange', handleChanged);
+    window.addEventListener('hashchange', handleChanged);
+
+    return (
+        <BottomNavigation
+            value={value}
+            onChange={(event, newValue) => {
+                setValue(newValue);
+            }}
+            showLabels
+            className={classes.root}
+        >
+            <BottomNavigationAction
+                label="Главная"
+                icon={<HomeIcon />}
+                component={Link}
+                to={HOME_PAGE_ROUTE_PATH}
+            />
+            <BottomNavigationAction
+                label="Сохраненое"
+                icon={<FavoriteIcon />}
+                component={Link}
+                to={FAVORITE_PAGE_ROUTE_PATH}
+            />
+            <BottomNavigationAction
+                label="Поиск"
+                icon={<SearchIcon />}
+                component={Link}
+                to={SEARCH_PAGE_ROUTE_PATH}
+            />
+        </BottomNavigation>
     );
 }

@@ -11,13 +11,13 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import {DialogContent} from "@material-ui/core";
 
+import FavoriteButton from "../FavoriteButton";
+import ShareButton from "../ShareButton";
 import OrderForm from "../../forms/OrderForm";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -46,7 +46,6 @@ export default function() {
 
     return (
         <React.Fragment>
-
             <Card className={classes.card}>
                 <CardHeader
                     avatar={
@@ -74,12 +73,8 @@ export default function() {
                     </Typography>
                 </CardContent>
                 <CardActions disableSpacing>
-                    <IconButton aria-label="add to favorites">
-                        <FavoriteIcon />
-                    </IconButton>
-                    <IconButton aria-label="share">
-                        <ShareIcon />
-                    </IconButton>
+                    <FavoriteButton />
+                    <ShareButton />
                     <Button
                         variant={"outlined"}
                         color={"primary"}
