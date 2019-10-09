@@ -1,5 +1,5 @@
 import React, {MouseEventHandler} from 'react';
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import {createStyles, makeStyles, Theme} from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
@@ -15,13 +15,15 @@ import Badge from "@material-ui/core/Badge";
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import SearchIcon from "@material-ui/icons/Search";
 import MenuIcon from '@material-ui/icons/Menu';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import CloseIcon from '@material-ui/icons/Close';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import LayoutDrawer from "../LayoutDrawer";
-import InputSearch from "../../InputSearch";
 
 import {HOME_PAGE_ROUTE_PATH} from "../../../pages/HomePage";
 import {FAVORITE_PAGE_ROUTE_PATH} from "../../../pages/FavoritesPage";
+import * as H from "history";
 
 interface HideOnScrollProps {
     children: React.ReactElement;
@@ -108,6 +110,62 @@ function MobileAppBar(props: LayoutAppBar) {
     );
 }
 
+const useSearchAppBarStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        toolbar: {
+            display: 'flex',
+            alignItems: 'center'
+        },
+        actions: {
+            display: 'flex',
+            marginLeft: 'auto'
+        },
+        searchInput: {
+            fontSize: theme.typography.h6.fontSize,
+            width: '100%',
+            marginLeft: theme.spacing(1),
+            marginRight: theme.spacing(1)
+        }
+    })
+);
+
+interface SearchAppBarProps {
+    onClose?: React.MouseEventHandler,
+    onSubmit?: FunctionStringCallback
+}
+
+function SearchAppBar(props: SearchAppBarProps) {
+    const classes = useSearchAppBarStyles();
+    const { onClose, onSubmit } = props;
+    const enterKeyCode = 13;
+    const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.keyCode !== enterKeyCode) return;
+        const query = (event.target as HTMLInputElement).value;
+        if (onSubmit) onSubmit(query);
+    };
+
+    return (
+        <AppBar position="fixed" color="inherit">
+            <Toolbar className={classes.toolbar}>
+                <IconButton edge="start" onClick={onClose}>
+                    <ArrowBackIcon />
+                </IconButton>
+                <InputBase
+                    className={classes.searchInput}
+                    placeholder="Спектакли, артисты"
+                    autoFocus
+                    onKeyUp={handleKeyUp}
+                />
+                <div className={classes.actions}>
+                    <IconButton edge="end" onClick={onClose}>
+                        <CloseIcon />
+                    </IconButton>
+                </div>
+            </Toolbar>
+        </AppBar>
+    );
+}
+
 const useDesktopStyles = makeStyles((theme: Theme) =>
     createStyles({
         toolbar: {
@@ -131,62 +189,85 @@ const useDesktopStyles = makeStyles((theme: Theme) =>
             },
             transition: '280ms'
         },
-        search: {
-            marginLeft: 'auto'
-        },
         actions: {
             display: 'flex',
+            marginLeft: 'auto'
         },
         spacing: {
             paddingTop: 64
-        }
+        },
     })
 );
 
 function DesktopAppBar(props: LayoutAppBar) {
     const classes = useDesktopStyles();
     const { onDrawerOpen } = props;
+    const [showSearch, setShowSearch] = React.useState<boolean>(false);
+    const history = useHistory();
+
+    const handleToggleSearch = () => setShowSearch( !showSearch);
+    const handleSearchSubmit = (query: string) => {
+        if (!query) return;
+        history.push(`/search?q=${query}`);
+        setShowSearch(false);
+    };
+
+    const renderSearchAppBar = () => (
+        <SearchAppBar
+            onClose={handleToggleSearch}
+            onSubmit={handleSearchSubmit}
+        />
+    );
+
+    const renderAppBar = () => (
+        <AppBar position="fixed">
+            <Toolbar className={classes.toolbar}>
+                <IconButton
+                    edge="start"
+                    color="inherit"
+                    aria-label="open drawer"
+                    className={classes.menuButton}
+                    onClick={onDrawerOpen}
+                >
+                    <MenuIcon />
+                </IconButton>
+                <Typography className={classes.title} variant="h6" noWrap>
+                    <Link to={HOME_PAGE_ROUTE_PATH} className={classes.titleLink}>Билеты в театр</Link>
+                </Typography>
+                <div className={classes.actions}>
+                    <IconButton
+                        aria-label="favorites"
+                        color="inherit"
+                        component={Link}
+                        to={FAVORITE_PAGE_ROUTE_PATH}
+                    >
+                        <Badge badgeContent={4} color="secondary">
+                            <FavoriteIcon />
+                        </Badge>
+                    </IconButton>
+                    <IconButton
+                        aria-label="account of current user"
+                        aria-haspopup="true"
+                        color="inherit"
+                    >
+                        <AccountCircle />
+                    </IconButton>
+                    <IconButton
+                        edge="end"
+                        aria-label="search"
+                        color="inherit"
+                        onClick={handleToggleSearch}
+                    >
+                        <SearchIcon />
+                    </IconButton>
+                </div>
+            </Toolbar>
+        </AppBar>
+    );
+
     return (
         <React.Fragment>
-            <AppBar position={'fixed'}>
-                <Toolbar className={classes.toolbar}>
-                    <IconButton
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        className={classes.menuButton}
-                        onClick={onDrawerOpen}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography className={classes.title} variant="h6" noWrap>
-                        <Link to={HOME_PAGE_ROUTE_PATH} className={classes.titleLink}>Билеты в театр</Link>
-                    </Typography>
-                    <div className={classes.search}>
-                        <InputSearch />
-                    </div>
-                    <div className={classes.actions}>
-                        <IconButton
-                            aria-label="favorites"
-                            color="inherit"
-                            component={Link}
-                            to={FAVORITE_PAGE_ROUTE_PATH}
-                        >
-                            <Badge badgeContent={4} color="secondary">
-                                <FavoriteIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-haspopup="true"
-                            color="inherit"
-                        >
-                            <AccountCircle />
-                        </IconButton>
-                    </div>
-                </Toolbar>
-            </AppBar>
+            {showSearch ? renderSearchAppBar() : renderAppBar()}
             <div className={classes.spacing} />
         </React.Fragment>
     );

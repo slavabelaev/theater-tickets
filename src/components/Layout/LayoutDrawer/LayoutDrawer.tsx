@@ -24,34 +24,47 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
+interface ListItemLink {
+    title: string;
+    to: string;
+}
+
 export default function(props: SwipeableDrawerProps) {
+    const mainMenuLinks: ListItemLink[] = [
+        { title: 'Главная', to: HOME_PAGE_ROUTE_PATH },
+        { title: 'Проверка билета', to: '' },
+    ];
+    const footerMenuLinks: ListItemLink[] = [
+        { title: 'Условия использования', to: USE_TERMS_PAGE_ROUTE_PATH }
+    ];
     const classes = useStyles();
     const { onClose } = props;
+
+    const renderListItem = (item: ListItemLink) => (
+        <ListItem
+            button
+            component={Link}
+            to={item.to}
+            onClick={onClose}
+            key={item.to}
+        >
+            <ListItemText primary={item.title} />
+        </ListItem>
+    );
+
+    const renderList = (items: ListItemLink[]) => (
+        <List component="nav" aria-label="drawer navigation">
+            {items.map(renderListItem)}
+        </List>
+    );
+
     return (
         <SwipeableDrawer {...props}>
             <div className={classes.container}>
-                <List component="nav" aria-label="drawer navigation">
-                    <ListItem
-                        button
-                        component={Link}
-                        to={HOME_PAGE_ROUTE_PATH}
-                        onClick={onClose}
-                    >
-                        <ListItemText primary="Главная" />
-                    </ListItem>
-                </List>
+                {renderList(mainMenuLinks)}
                 <footer className={classes.footer}>
                     <Divider />
-                    <List component="nav" aria-label="drawer footer">
-                        <ListItem
-                            button
-                            component={Link}
-                            to={USE_TERMS_PAGE_ROUTE_PATH}
-                            onClick={onClose}
-                        >
-                            <ListItemText primary="Условия использования" />
-                        </ListItem>
-                    </List>
+                    {renderList(footerMenuLinks)}
                 </footer>
             </div>
         </SwipeableDrawer>
