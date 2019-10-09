@@ -24,12 +24,14 @@ const useStyles = makeStyles((theme: Theme) =>
             color: 'red'
         },
         drawer: {
-            maxWidth: 360,
-            margin: 'auto',
-            left: 0,
-            right: 0,
-            bottom: 0,
-            position: 'absolute'
+            [theme.breakpoints.up('sm')]: {
+                maxWidth: 360,
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                bottom: 0,
+                position: 'absolute'
+            },
         }
     })
 );
