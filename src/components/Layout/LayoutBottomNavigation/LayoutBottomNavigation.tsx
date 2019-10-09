@@ -25,32 +25,34 @@ export  default function() {
     const [value, setValue] = React.useState(0);
 
     return (
-        <BottomNavigation
-            value={value}
-            onChange={(event, newValue) => {
-                setValue(newValue);
-            }}
-            showLabels
-            className={classes.root}
-        >
-            <BottomNavigationAction
-                label="Главная"
-                icon={<HomeIcon />}
-                component={Link}
-                to={HOME_PAGE_ROUTE_PATH}
-            />
-            <BottomNavigationAction
-                label="Сохраненое"
-                icon={<FavoriteIcon />}
-                component={Link}
-                to={FAVORITE_PAGE_ROUTE_PATH}
-            />
-            <BottomNavigationAction
-                label="Поиск"
-                icon={<SearchIcon />}
-                component={Link}
-                to={SEARCH_PAGE_ROUTE_PATH}
-            />
-        </BottomNavigation>
+        <React.Fragment>
+            <BottomNavigation
+                value={value}
+                onChange={(event, newValue) => {
+                    setValue(newValue);
+                }}
+                showLabels
+                className={classes.root}
+            >
+                <BottomNavigationAction
+                    label="Главная"
+                    icon={<HomeIcon />}
+                    component={Link}
+                    to={HOME_PAGE_ROUTE_PATH}
+                />
+                <BottomNavigationAction
+                    label="Сохраненое"
+                    icon={<FavoriteIcon />}
+                    component={Link}
+                    to={FAVORITE_PAGE_ROUTE_PATH}
+                />
+                <BottomNavigationAction
+                    label="Поиск"
+                    icon={<SearchIcon />}
+                    component={Link}
+                    to={SEARCH_PAGE_ROUTE_PATH}
+                />
+            </BottomNavigation>
+        </React.Fragment>
     );
 }
