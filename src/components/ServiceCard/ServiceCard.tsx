@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
         card: {},
         media: {
             height: 0,
-            paddingTop: '56.25%', // 16:9
+            paddingTop: '145%', // 16:9
         },
         button: {
             marginLeft: 'auto'
@@ -36,7 +36,13 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function() {
+interface Performance {
+    title: string;
+    image: string;
+    date: string;
+}
+
+export default function(props: Performance) {
     const [isOpenDialog, setOpenDialog] = React.useState(false);
     const classes = useStyles();
 
@@ -58,20 +64,14 @@ export default function() {
                             <MoreVertIcon />
                         </IconButton>
                     }
-                    title="Shrimp and Chorizo Paella"
-                    subheader="September 14, 2016"
+                    title={props.title}
+                    subheader={props.date}
                 />
                 <CardMedia
                     className={classes.media}
-                    image="/static/images/cards/paella.jpg"
+                    image={props.image}
                     title="Paella dish"
                 />
-                <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        This impressive paella is a perfect party dish and a fun meal to cook together with your
-                        guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                    </Typography>
-                </CardContent>
                 <CardActions disableSpacing>
                     <FavoriteButton />
                     <ShareButton />

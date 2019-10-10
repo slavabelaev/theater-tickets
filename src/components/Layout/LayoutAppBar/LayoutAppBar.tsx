@@ -100,7 +100,8 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         actions: {
             display: 'flex',
-            marginLeft: 'auto'
+            marginLeft: 'auto',
+            alignItems: 'center'
         },
         spacing: {
             paddingTop: 64
@@ -109,8 +110,8 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export default function() {
-    const [openDrawer, setOpenDrawer] = React.useState(false);
     const classes = useStyles();
+    const [openDrawer, setOpenDrawer] = React.useState(false);
     const [showSearch, setShowSearch] = React.useState<boolean>(false);
     const history = useHistory();
 
