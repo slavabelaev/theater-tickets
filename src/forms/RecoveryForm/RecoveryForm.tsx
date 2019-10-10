@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {useHistory} from 'react-router-dom';
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -33,12 +33,19 @@ interface RecoveryFormState {
     login: string;
 }
 
+interface RecoveryFormProps {
+    onSignIn?: VoidFunction;
+}
 
-export default function() {
+export default function(props: RecoveryFormProps) {
     const classes = useStyles();
+    const history = useHistory();
+    const {onSignIn} = props;
     const [values, setValues] = React.useState<RecoveryFormState>({
         login: '',
     });
+
+    const handleSignIn = onSignIn || (() => history.push(SIGN_IN_PAGE_ROUTE_PATH));
 
     const handleChange = (prop: keyof RecoveryFormState) => (event: React.ChangeEvent<HTMLInputElement>) => {
         setValues({ ...values, [prop]: event.target.value });
@@ -72,7 +79,6 @@ export default function() {
                             label="Телефон или адрес эл. почты"
                             name="login"
                             autoComplete="login"
-                            autoFocus
                             value={values.login}
                             onChange={handleChange('login')}
                         />
@@ -80,8 +86,7 @@ export default function() {
                     <Grid item xs={6}>
                         <Button
                             color="primary"
-                            component={Link}
-                            to={SIGN_IN_PAGE_ROUTE_PATH}
+                            onClick={handleSignIn}
                         >
                             Войти
                         </Button>

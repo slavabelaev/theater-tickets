@@ -13,6 +13,7 @@ import {UseTermsPage, USE_TERMS_PAGE_ROUTE_PATH} from "./pages/UseTermsPage";
 import {SignInPage, SIGN_IN_PAGE_ROUTE_PATH} from "./pages/SignInPage";
 import {SignUpPage, SIGN_UP_PAGE_ROUTE_PATH} from "./pages/SignUpPage";
 import {RecoveryPage, RECOVERY_PAGE_ROUTE_PATH} from "./pages/RecoveryPage";
+import SwipeablePage from "./pages/SwipeablePage/SwipeablePage";
 
 
 export default function() {
@@ -27,9 +28,9 @@ export default function() {
                     <Route path={SUBSCRIBE_PAGE_ROUTE_PATH} component={SubscribePage} />
                     <Route path={UNSUBSCRIBE_PAGE_ROUTE_PATH} component={UnsubscribePage} />
                     <Route path={USE_TERMS_PAGE_ROUTE_PATH} component={UseTermsPage} />
-                    <Route path={SIGN_IN_PAGE_ROUTE_PATH} component={SignInPage} />
-                    <Route path={SIGN_UP_PAGE_ROUTE_PATH} component={SignUpPage} />
-                    <Route path={RECOVERY_PAGE_ROUTE_PATH} component={RecoveryPage} />
+                    <Route path={SIGN_IN_PAGE_ROUTE_PATH} component={SwipeablePage} />
+                    <Route path={SIGN_UP_PAGE_ROUTE_PATH} component={SwipeablePage} />
+                    <Route path={RECOVERY_PAGE_ROUTE_PATH} component={SwipeablePage} />
                     <Route component={NotFoundPage} />
                 </Switch>
             </Layout>

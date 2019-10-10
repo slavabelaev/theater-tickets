@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {useHistory} from 'react-router-dom';
 import {Link as StyledLink} from "@material-ui/core";
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     recoveryLink: {
         display: 'flex',
         alignItems: 'center',
+        cursor: 'pointer',
         '&>svg': {
             marginRight: theme.spacing(1)
         }
@@ -45,14 +46,23 @@ interface SignInFormState {
     password: string;
 }
 
+interface SignInFormProps {
+    onSignUp?: VoidFunction;
+    onRecovery?: VoidFunction;
+}
 
-export default function() {
+export default function(props: SignInFormProps) {
     const classes = useStyles();
+    const history = useHistory();
+    const {onSignUp, onRecovery} = props;
     const [showPassword, setShowPassword] = React.useState(false);
     const [values, setValues] = React.useState<SignInFormState>({
         login: '',
         password: ''
     });
+
+    const handleSignUp = onSignUp || (() => history.push(SIGN_UP_PAGE_ROUTE_PATH));
+    const handleRecovery = onRecovery || (() => history.push(RECOVERY_PAGE_ROUTE_PATH));
 
     const handleChange = (prop: keyof SignInFormState) => (event: React.ChangeEvent<HTMLInputElement>) => {
         setValues({ ...values, [prop]: event.target.value });
@@ -93,7 +103,6 @@ export default function() {
                             label="Телефон или адрес эл. почты"
                             name="login"
                             autoComplete="login"
-                            autoFocus
                             value={values.login}
                             onChange={handleChange('login')}
                         />
@@ -131,9 +140,8 @@ export default function() {
                     </Grid>
                     <Grid item xs={12}>
                         <StyledLink
-                            component={Link}
-                            to={RECOVERY_PAGE_ROUTE_PATH}
                             className={classes.recoveryLink}
+                            onClick={handleRecovery}
                         >
                             <SettingsBackupRestoreIcon />
                             Забыли пароль?
@@ -142,8 +150,7 @@ export default function() {
                     <Grid item xs={6}>
                         <Button
                             color="primary"
-                            component={Link}
-                            to={SIGN_UP_PAGE_ROUTE_PATH}
+                            onClick={handleSignUp}
                         >
                             Создать аккаунт
                         </Button>

@@ -2,6 +2,7 @@ import React from 'react';
 import {createStyles, makeStyles, Theme} from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import RecoveryForm from "../../forms/RecoveryForm";
+import SwipeableForm from "../../forms/SwipeableForm/SwipeableForm";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -22,7 +23,8 @@ export default function () {
     const classes = useStyles();
     return (
         <Container className={classes.root} maxWidth={'xs'}>
-            <RecoveryForm />
+            {/*<RecoveryForm />*/}
+            <SwipeableForm />
         </Container>
     )
 }

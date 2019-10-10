@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -32,9 +32,17 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
 }));
 
-export default function() {
+interface SignUpFormProps {
+    onSignIn?: VoidFunction;
+}
+
+export default function(props: SignUpFormProps) {
     const classes = useStyles();
+    const history = useHistory();
+    const {onSignIn} = props;
     const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleSignIn = onSignIn || (() => history.push(SIGN_IN_PAGE_ROUTE_PATH));
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
@@ -62,7 +70,6 @@ export default function() {
                             fullWidth
                             id="firstName"
                             label="Имя"
-                            autoFocus
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -123,8 +130,7 @@ export default function() {
                     <Grid item xs={6}>
                         <Button
                             color="primary"
-                            component={Link}
-                            to={SIGN_IN_PAGE_ROUTE_PATH}
+                            onClick={handleSignIn}
                         >
                             Войти
                         </Button>

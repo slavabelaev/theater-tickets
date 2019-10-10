@@ -15,6 +15,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import LayoutDrawer from "../LayoutDrawer";
+import SignInButton from "../../SignInButton";
 
 import {HOME_PAGE_ROUTE_PATH} from "../../../pages/HomePage";
 import {FAVORITE_PAGE_ROUTE_PATH} from "../../../pages/FavoritesPage";
@@ -167,15 +168,13 @@ export default function() {
                             <FavoriteIcon />
                         </Badge>
                     </IconButton>
-                    <IconButton
+                    <SignInButton
                         aria-label="account of current user"
                         aria-haspopup="true"
                         color="inherit"
-                        component={Link}
-                        to="/sign-in"
                     >
                         <AccountCircle />
-                    </IconButton>
+                    </SignInButton>
                     <IconButton
                         edge="end"
                         aria-label="search"
