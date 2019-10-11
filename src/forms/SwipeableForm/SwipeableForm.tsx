@@ -51,7 +51,7 @@ export default function (props: SwipeableFormProps) {
     );
 
     return (
-        <SwipeableViews index={index}>
+        <SwipeableViews index={index} animateHeight>
             <View>
                 <RecoveryForm
                     onSignIn={handleSignIn}

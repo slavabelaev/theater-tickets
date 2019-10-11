@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
         card: {},
         media: {
             height: 0,
-            paddingTop: '145%', // 16:9
+            paddingTop: '80%', // 16:9
         },
         button: {
             marginLeft: 'auto'
