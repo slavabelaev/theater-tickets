@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStyles, makeStyles, Theme} from "@material-ui/core";
-import SwipeableViews from 'react-swipeable-views';
+import SwipeableViews, {SwipeableViewsProps} from 'react-swipeable-views';
 import {BoxProps} from "@material-ui/core/Box";
 
 import SignInForm from "../SignInForm/SignInForm";
@@ -24,11 +24,12 @@ interface SwipeableFormProps {
     onSignIn?: VoidFunction;
     onSignUp?: VoidFunction;
     onRecovery?: VoidFunction;
+    animateHeight?: boolean;
 }
 
 export default function (props: SwipeableFormProps) {
     const classes = useStyles();
-    const {initialIndex, onSignIn, onSignUp, onRecovery} = props;
+    const {initialIndex, onSignIn, onSignUp, onRecovery, animateHeight} = props;
     const [index, setIndex] = React.useState(initialIndex !== undefined ? initialIndex : 1);
 
     const handleSignIn = () => {
@@ -51,7 +52,7 @@ export default function (props: SwipeableFormProps) {
     );
 
     return (
-        <SwipeableViews index={index} animateHeight>
+        <SwipeableViews index={index} animateHeight={animateHeight}>
             <View>
                 <RecoveryForm
                     onSignIn={handleSignIn}

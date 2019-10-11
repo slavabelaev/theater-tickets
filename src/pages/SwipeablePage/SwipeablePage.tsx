@@ -18,9 +18,6 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.up('sm')]: {
                 padding: theme.spacing(3),
             }
-        },
-        view: {
-            padding: theme.spacing(2)
         }
     })
 );
@@ -37,7 +34,6 @@ export default function () {
         case SIGN_UP_PAGE_ROUTE_PATH: initialIndex = 2; break;
     }
 
-    console.log(initialIndex);
 
     return (
         <Container className={classes.root} maxWidth={'xs'}>
