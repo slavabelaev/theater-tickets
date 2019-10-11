@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStyles, makeStyles, Theme} from "@material-ui/core";
-import SwipeableViews, {SwipeableViewsProps} from 'react-swipeable-views';
+import SwipeableViews from 'react-swipeable-views';
 import {BoxProps} from "@material-ui/core/Box";
 
 import SignInForm from "../SignInForm/SignInForm";

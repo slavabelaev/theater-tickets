@@ -2,9 +2,9 @@ import React from 'react';
 import {useLocation, useHistory} from "react-router";
 import {createStyles, makeStyles, Theme} from "@material-ui/core";
 import Container from "@material-ui/core/Container";
-import {SIGN_IN_PAGE_ROUTE_PATH} from "../SignInPage";
-import {SIGN_UP_PAGE_ROUTE_PATH} from "../SignUpPage";
-import {RECOVERY_PAGE_ROUTE_PATH} from "../RecoveryPage";
+import {SIGN_IN_PAGE_ROUTE_PATH} from "./index";
+import {SIGN_UP_PAGE_ROUTE_PATH} from "./index";
+import {RECOVERY_PAGE_ROUTE_PATH} from "./index";
 import SwipeableForm from "../../forms/SwipeableForm";
 
 const useStyles = makeStyles((theme: Theme) =>

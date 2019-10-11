@@ -11,10 +11,12 @@ import {SearchPage, SEARCH_PAGE_ROUTE_PATH} from "./pages/SearchPage";
 import {SubscribePage, SUBSCRIBE_PAGE_ROUTE_PATH} from "./pages/SubscribePage";
 import {UnsubscribePage, UNSUBSCRIBE_PAGE_ROUTE_PATH} from "./pages/UnsubscribePage";
 import {UseTermsPage, USE_TERMS_PAGE_ROUTE_PATH} from "./pages/UseTermsPage";
-import {SIGN_IN_PAGE_ROUTE_PATH} from "./pages/SignInPage";
-import {SIGN_UP_PAGE_ROUTE_PATH} from "./pages/SignUpPage";
-import {RECOVERY_PAGE_ROUTE_PATH} from "./pages/RecoveryPage";
-import SwipeablePage from "./pages/SwipeablePage/SwipeablePage";
+import {
+    SwipeablePage,
+    SIGN_IN_PAGE_ROUTE_PATH,
+    SIGN_UP_PAGE_ROUTE_PATH,
+    RECOVERY_PAGE_ROUTE_PATH
+} from "./pages/SwipeablePage";
 
 const SwipeablePageWithErrorBoundary = withErrorBoundary(SwipeablePage);
 

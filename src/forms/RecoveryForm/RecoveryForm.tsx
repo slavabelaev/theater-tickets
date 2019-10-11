@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import SettingsBackupRestoreIcon from '@material-ui/icons/SettingsBackupRestore';
-import {SIGN_IN_PAGE_ROUTE_PATH} from "../../pages/SignInPage";
+import {SIGN_IN_PAGE_ROUTE_PATH} from "../../pages/SwipeablePage";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {

@@ -14,8 +14,7 @@ import Box from "@material-ui/core/Box";
 import {Visibility, VisibilityOff} from "@material-ui/icons";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import SettingsBackupRestoreIcon from '@material-ui/icons/SettingsBackupRestore';
-import {SIGN_UP_PAGE_ROUTE_PATH} from "../../pages/SignUpPage";
-import {RECOVERY_PAGE_ROUTE_PATH} from "../../pages/RecoveryPage";
+import {SIGN_UP_PAGE_ROUTE_PATH, RECOVERY_PAGE_ROUTE_PATH} from "../../pages/SwipeablePage";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {

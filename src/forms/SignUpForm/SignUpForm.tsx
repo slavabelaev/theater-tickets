@@ -14,7 +14,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Box from "@material-ui/core/Box";
 import {Visibility, VisibilityOff} from "@material-ui/icons";
 import PersonIcon from '@material-ui/icons/Person';
-import {SIGN_IN_PAGE_ROUTE_PATH} from "../../pages/SignInPage";
+import {SIGN_IN_PAGE_ROUTE_PATH} from "../../pages/SwipeablePage";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     paper: {
