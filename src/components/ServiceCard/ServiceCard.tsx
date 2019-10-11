@@ -1,20 +1,18 @@
-import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { blue } from '@material-ui/core/colors';
-import { red } from '@material-ui/core/colors';
+import React from "react";
+import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import { red } from "@material-ui/core/colors";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
-import {DialogContent} from "@material-ui/core";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContent from "@material-ui/core/DialogContent";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import CommentIcon from "@material-ui/icons/Comment"
 
 import FavoriteButton from "../FavoriteButton";
 import ShareButton from "../ShareButton";
@@ -56,7 +54,7 @@ export default function(props: Performance) {
                 <CardHeader
                     avatar={
                         <Avatar aria-label="recipe" className={classes.avatar}>
-                            R
+                            9.2
                         </Avatar>
                     }
                     action={
@@ -75,13 +73,16 @@ export default function(props: Performance) {
                 <CardActions disableSpacing>
                     <FavoriteButton />
                     <ShareButton />
+                    <IconButton>
+                        <CommentIcon />
+                    </IconButton>
                     <Button
                         variant={"outlined"}
                         color={"primary"}
                         onClick={toggleDialogState}
                         className={classes.button}
                     >
-                        Заказать
+                        Заказать билеты
                     </Button>
                 </CardActions>
             </Card>
@@ -90,20 +91,12 @@ export default function(props: Performance) {
     );
 }
 
-const useOrderDialogStyles = makeStyles({
-    avatar: {
-        backgroundColor: blue[100],
-        color: blue[600],
-    },
-});
-
 export interface OrderDialogProps {
     open: boolean;
     onClose: VoidFunction
 }
 
 function OrderDialog(props: OrderDialogProps) {
-    const classes = useOrderDialogStyles();
     const { open, onClose } = props;
 
     return (

@@ -17,6 +17,7 @@ import {
     EmailShareButton,
     CommonShareButtonProps,
 } from 'react-share';
+import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -55,28 +56,34 @@ export default function () {
 
     const className = open ? classes.opened : undefined;
 
+    const darawer = (
+        <Drawer
+            anchor={'bottom'}
+            open={open}
+            onClose={toggleDrawer}
+            PaperProps={{
+                style: {
+                    maxWidth: 360,
+                    margin: 'auto',
+                    borderRadius: '4px 4px 0 0'
+                }
+            }}
+        >
+            <ShareDrawer url={'https://yandex.com/'} />
+        </Drawer>
+    );
+
     return (
         <React.Fragment>
-            <IconButton
-                className={className}
-                onClick={toggleDrawer}
-            >
-                <ShareIcon />
-            </IconButton>
-            <Drawer
-                anchor={'bottom'}
-                open={open}
-                onClose={toggleDrawer}
-                PaperProps={{
-                    style: {
-                        maxWidth: 360,
-                        margin: 'auto',
-                        borderRadius: '4px 4px 0 0'
-                    }
-                }}
-            >
-                <ShareDrawer url={'https://yandex.com/'} />
-            </Drawer>
+            <Tooltip title="Поделиться">
+                <IconButton
+                    className={className}
+                    onClick={toggleDrawer}
+                >
+                    <ShareIcon />
+                </IconButton>
+            </Tooltip>
+            {darawer}
         </React.Fragment>
     );
 }

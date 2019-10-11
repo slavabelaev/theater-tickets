@@ -10,7 +10,10 @@ import RecoveryForm from "../RecoveryForm/RecoveryForm";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         view: {
-            padding: theme.spacing(2)
+            padding: theme.spacing(2),
+            [theme.breakpoints.up(720)]: {
+                padding: theme.spacing(3),
+            }
         }
     })
 );

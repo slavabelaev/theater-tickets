@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 import Layout from "./components/Layout";
 import {withErrorBoundary} from "./components/ErrorBoundary";
 
@@ -22,22 +24,24 @@ const SwipeablePageWithErrorBoundary = withErrorBoundary(SwipeablePage);
 
 export default function() {
     return (
-        <Router>
-            <Layout>
-                <Switch>
-                    <Route path={HOME_PAGE_ROUTE_PATH} exact={true} component={withErrorBoundary(HomePage)} />
-                    <Route path={DETAILS_PAGE_ROUTE_PATH} component={withErrorBoundary(DetailsPage)} />
-                    <Route path={FAVORITE_PAGE_ROUTE_PATH} component={withErrorBoundary(FavoritesPage)} />
-                    <Route path={SEARCH_PAGE_ROUTE_PATH} component={withErrorBoundary(SearchPage)} />
-                    <Route path={SUBSCRIBE_PAGE_ROUTE_PATH} component={withErrorBoundary(SubscribePage)} />
-                    <Route path={UNSUBSCRIBE_PAGE_ROUTE_PATH} component={withErrorBoundary(UnsubscribePage)} />
-                    <Route path={USE_TERMS_PAGE_ROUTE_PATH} component={withErrorBoundary(UseTermsPage)} />
-                    <Route path={SIGN_IN_PAGE_ROUTE_PATH} component={SwipeablePageWithErrorBoundary} />
-                    <Route path={SIGN_UP_PAGE_ROUTE_PATH} component={SwipeablePageWithErrorBoundary} />
-                    <Route path={RECOVERY_PAGE_ROUTE_PATH} component={SwipeablePageWithErrorBoundary} />
-                    <Route component={NotFoundPage} />
-                </Switch>
-            </Layout>
-        </Router>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <Router>
+                <Layout>
+                    <Switch>
+                        <Route path={HOME_PAGE_ROUTE_PATH} exact={true} component={withErrorBoundary(HomePage)} />
+                        <Route path={DETAILS_PAGE_ROUTE_PATH} component={withErrorBoundary(DetailsPage)} />
+                        <Route path={FAVORITE_PAGE_ROUTE_PATH} component={withErrorBoundary(FavoritesPage)} />
+                        <Route path={SEARCH_PAGE_ROUTE_PATH} component={withErrorBoundary(SearchPage)} />
+                        <Route path={SUBSCRIBE_PAGE_ROUTE_PATH} component={withErrorBoundary(SubscribePage)} />
+                        <Route path={UNSUBSCRIBE_PAGE_ROUTE_PATH} component={withErrorBoundary(UnsubscribePage)} />
+                        <Route path={USE_TERMS_PAGE_ROUTE_PATH} component={withErrorBoundary(UseTermsPage)} />
+                        <Route path={SIGN_IN_PAGE_ROUTE_PATH} component={SwipeablePageWithErrorBoundary} />
+                        <Route path={SIGN_UP_PAGE_ROUTE_PATH} component={SwipeablePageWithErrorBoundary} />
+                        <Route path={RECOVERY_PAGE_ROUTE_PATH} component={SwipeablePageWithErrorBoundary} />
+                        <Route component={NotFoundPage} />
+                    </Switch>
+                </Layout>
+            </Router>
+        </MuiPickersUtilsProvider>
     );
 }

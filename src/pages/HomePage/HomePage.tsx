@@ -1,6 +1,6 @@
 import React from 'react';
-import ServicesGrid from "../../components/ServicesGrid";
+import FilterableGrid from "../../components/FilterableGrid";
 
 export default () => (
-    <ServicesGrid />
+    <FilterableGrid />
 )
