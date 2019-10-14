@@ -5,9 +5,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
 import {createStyles, makeStyles, Theme, Toolbar} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
-import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import Collapse from "@material-ui/core/Collapse";
+import LikeButton from "./LikeButton";
 
 export interface CommentProps {
     fullName: string;
@@ -71,16 +70,7 @@ export function Comment({
                 </Collapse>
             </ListItem>
             <Toolbar component="footer" className={classes.toolbar}>
-                <Button
-                    startIcon={<ThumbUpIcon />}
-                >
-                    100
-                </Button>
-                <Button
-                    startIcon={<ThumbDownIcon />}
-                >
-                    10
-                </Button>
+                <LikeButton />
                 <Button
                     className={classes.showFullTextButton}
                     onClick={toggleShowFullText}

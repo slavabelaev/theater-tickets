@@ -1,10 +1,18 @@
 import React from "react";
+import Form, {FormProps} from "./Form";
+import {Grid} from "@material-ui/core";
 
-export function OrderForm() {
+export interface OrderFormProps extends FormProps{}
+
+export function OrderForm({...formProps}: OrderFormProps) {
     return (
-        <form action="">
-            <legend>Order Form</legend>
-        </form>
+        <Form {...formProps}>
+            <Grid container spacing={2}>
+                <Grid item xs={12}>
+
+                </Grid>
+            </Grid>
+        </Form>
     );
 }
 

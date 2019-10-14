@@ -51,7 +51,7 @@ const ShareDrawer = (props: CommonShareButtonProps) => {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         opened: {
-            color: 'red'
+            color: theme.palette.primary.main
         },
         drawer: {
             [theme.breakpoints.up('sm')]: {

@@ -3,7 +3,7 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 
 export interface FormProps extends React.DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement> {
-    withGutters?: boolean,
+    withPadding?: boolean,
     onSubmit?: VoidFunction,
     onCancel?: VoidFunction
 }
@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const Form: React.FC<FormProps> = (props) => {
     const classes = useStyles();
-    const {children, className, withGutters, onCancel, onSubmit, ...otherProps} = props;
+    const {children, className, withPadding, onCancel, onSubmit, ...otherProps} = props;
     const propClassName = className ? className + ' ' : '';
-    const rootClassName = withGutters ? classes.root : '';
+    const rootClassName = withPadding ? classes.root : '';
     return (
         <form {...otherProps} className={`${propClassName}${rootClassName}`}>
             {children}

@@ -44,6 +44,12 @@ const genres: Choice[] = [
     {label: 'Детям', value: '6'}
 ];
 
+const ratings: Choice[] = [
+    {label: 'Низкий', value: '2'},
+    {label: 'Средний', value: '3'},
+    {label: 'Высокий', value: '4'},
+];
+
 interface Choice {
     label: string;
     value: string;
@@ -166,6 +172,13 @@ export function FiltersForm() {
                     label="Жанры"
                     name="genre"
                     choices={genres}
+                />
+            </Grid>
+            <Grid item xs={12}>
+                <MultipleChoiceControl
+                    label="Рейтинг"
+                    name="rating"
+                    choices={ratings}
                 />
             </Grid>
             <Grid item xs={12}>

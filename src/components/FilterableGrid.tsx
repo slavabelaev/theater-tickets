@@ -1,6 +1,6 @@
 import React from "react";
 import {createStyles, makeStyles, Theme} from "@material-ui/core";
-import Drawer, {DrawerProps} from "@material-ui/core/Drawer";
+import Drawer from "@material-ui/core/Drawer";
 import AdaptiveGrid from "./AdaptiveGrid";
 import ServiceCard from "./ServiceCard";
 import FiltersForm from "../forms/FiltersForm";
@@ -9,16 +9,6 @@ import Tooltip from "@material-ui/core/Tooltip";
 import FilterListIcon from "@material-ui/icons/FilterList";
 
 import PERFORMANCES from "../repositories/performances.json";
-
-function DrawerWithFilters(props: DrawerProps) {
-    return (
-        <Drawer anchor="right" {...props}>
-            <div style={{width: 280, padding: 16}}>
-                <FiltersForm />
-            </div>
-        </Drawer>
-    );
-}
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -43,16 +33,25 @@ export function FilterableGrid() {
 
     const handleToggleFilters = () => setShowFilters(!showFilter);
 
+    const drawer = (
+        <Drawer
+            anchor="right"
+            open={showFilter}
+            onClose={handleToggleFilters}
+        >
+            <div style={{width: 280, padding: 16}}>
+                <FiltersForm />
+            </div>
+        </Drawer>
+    );
+
     return (
         <div className={classes.root}>
             <AdaptiveGrid
-                itemCount={1}
+                itemCount={10}
                 renderItem={renderItem}
             />
-            <DrawerWithFilters
-                open={showFilter}
-                onClose={handleToggleFilters}
-            />
+            {drawer}
             <Tooltip title="Фильтры">
                 <Fab
                     color="primary"

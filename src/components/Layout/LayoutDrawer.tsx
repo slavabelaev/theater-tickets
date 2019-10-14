@@ -34,7 +34,9 @@ interface LayoutDrawer extends SwipeableDrawerProps {
 
 export function LayoutDrawer(props: LayoutDrawer) {
     const mainMenuLinks: ListItemLink[] = [
-        { title: 'Главная', to: HOME_PAGE_ROUTE_PATH },
+        { title: 'Спектакли', to: HOME_PAGE_ROUTE_PATH },
+        { title: 'Артисты', to: HOME_PAGE_ROUTE_PATH },
+        { title: 'Театры', to: HOME_PAGE_ROUTE_PATH },
         { title: 'Проверка билета', to: '' },
     ];
     const footerMenuLinks: ListItemLink[] = [

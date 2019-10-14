@@ -3,14 +3,14 @@ import {createStyles, makeStyles, useTheme, Theme} from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import Drawer from "@material-ui/core/Drawer";
 import Tooltip from "@material-ui/core/Tooltip";
+import Typography from "@material-ui/core/Typography";
+import Toolbar from "@material-ui/core/Toolbar";
+import Button from "@material-ui/core/Button";
 import CommentIcon from "@material-ui/icons/Comment";
 
 import {Comments} from "./Comments";
 import {CommentProps} from "./Comment";
-import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
 import CommentForm from "../forms/CommentForm";
-import Typography from "@material-ui/core/Typography";
 
 const comments: CommentProps[] = Array(10).fill({
     fullName: 'Ирина Иванова',
@@ -29,15 +29,20 @@ const useStyles = makeStyles((theme: Theme) =>
         toolbar: {
           justifyContent: 'space-between'
         },
-        opened: {
-            color: 'red'
+        active: {
+            color: theme.palette.primary.main
         }
     })
 );
 
+enum View {
+    comments,
+    editForm,
+    hidden
+}
+
 export function CommentsButton() {
-    const [open, setOpen] = React.useState(true);
-    const [edit, setEdit] = React.useState(false);
+    const [view, setView] = React.useState(View.hidden);
     const theme = useTheme();
     const classes = useStyles();
     const isDrawerCloseEvent = (event: React.KeyboardEvent | React.MouseEvent) => (
@@ -46,18 +51,15 @@ export function CommentsButton() {
         ((event as React.KeyboardEvent).key === 'Tab' ||
             (event as React.KeyboardEvent).key === 'Shift')
     );
-    const toggleDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
+    const toggleHide = (event: React.KeyboardEvent | React.MouseEvent) => {
         if (isDrawerCloseEvent(event)) return;
 
-        setOpen(!open);
+        setView(view !== View.hidden ? View.hidden : View.comments);
     };
     const toggleEdit = () => {
-        setEdit(!edit);
-        setOpen(!open);
+        setView(view === View.editForm ? View.comments : View.editForm);
     };
 
-
-    const className = open ? classes.opened : undefined;
     const drawerStyles = {
         maxWidth: 480,
         margin: 'auto',
@@ -67,8 +69,8 @@ export function CommentsButton() {
     const commentsDrawer = (
         <Drawer
             anchor="bottom"
-            open={open}
-            onClose={toggleDrawer}
+            open={view === View.comments}
+            onClose={toggleHide}
             PaperProps={{style: drawerStyles}}
         >
             <Toolbar className={classes.toolbar}>
@@ -88,14 +90,15 @@ export function CommentsButton() {
     const commentFormDrawer = (
         <Drawer
             anchor="bottom"
-            open={edit}
-            onClose={toggleEdit}
+            open={view === View.editForm}
+            onClose={toggleHide}
             PaperProps={{style: drawerStyles}}
         >
             <CommentForm
-                withGutters={true}
-                autoFocus={true}
+                withPadding
+                autoFocus
                 onCancel={toggleEdit}
+                onSubmit={toggleEdit}
             />
         </Drawer>
     );
@@ -104,8 +107,8 @@ export function CommentsButton() {
         <>
             <Tooltip title="Отзывы">
                 <IconButton
-                    className={className}
-                    onClick={toggleDrawer}
+                    className={view !== View.hidden ? classes.active : undefined}
+                    onClick={toggleHide}
                 >
                     <CommentIcon />
                 </IconButton>

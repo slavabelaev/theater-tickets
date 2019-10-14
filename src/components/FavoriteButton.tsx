@@ -7,7 +7,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         selected: {
-            color: 'red'
+            color: theme.palette.secondary.main
         }
     })
 );

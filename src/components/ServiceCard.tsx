@@ -7,34 +7,13 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardActions from "@material-ui/core/CardActions";
-import Button from "@material-ui/core/Button";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 import FavoriteButton from "./FavoriteButton";
 import ShareButton from "./ShareButton";
 import CommentsButton from "./CommentsButton";
-import OrderForm from "../forms/OrderForm";
+import OrderButton from "./OrderButton";
 
-interface OrderDialogProps {
-    open: boolean;
-    onClose: VoidFunction
-}
-
-function OrderDialog(props: OrderDialogProps) {
-    const { open, onClose } = props;
-
-    return (
-        <Dialog onClose={onClose} aria-labelledby="simple-dialog-title" open={open}>
-            <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
-            <DialogContent>
-                <OrderForm />
-            </DialogContent>
-        </Dialog>
-    );
-}
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -43,11 +22,18 @@ const useStyles = makeStyles((theme: Theme) =>
             height: 0,
             paddingTop: '80%', // 16:9
         },
-        button: {
+        orderButton: {
             marginLeft: 'auto'
         },
+        title: {
+            display: 'inline-block',
+            whiteSpace: 'nowrap',
+            textOverflow: 'ellipsis',
+            overflow: 'hidden',
+            maxWidth: 200
+        },
         avatar: {
-            backgroundColor: red[500],
+            backgroundColor: theme.palette.secondary.main,
         },
     }),
 );
@@ -59,12 +45,7 @@ export interface ServiceCardProps {
 }
 
 export function ServiceCard(props: ServiceCardProps) {
-    const [isOpenDialog, setOpenDialog] = React.useState(false);
     const classes = useStyles();
-
-    const toggleDialogState = () => {
-        setOpenDialog(!isOpenDialog);
-    };
 
     return (
         <React.Fragment>
@@ -80,29 +61,27 @@ export function ServiceCard(props: ServiceCardProps) {
                             <MoreVertIcon />
                         </IconButton>
                     }
-                    title={props.title}
+                    title={
+                        <span className={classes.title}>
+                            {props.title}
+                        </span>
+                    }
                     subheader={props.date}
                 />
                 <CardMedia
                     className={classes.media}
                     image={props.image}
-                    title="Paella dish"
+                    title=""
                 />
                 <CardActions disableSpacing>
                     <FavoriteButton />
                     <ShareButton />
                     <CommentsButton />
-                    <Button
-                        variant={"outlined"}
-                        color={"primary"}
-                        onClick={toggleDialogState}
-                        className={classes.button}
-                    >
-                        Заказать билеты
-                    </Button>
+                    <OrderButton
+                        className={classes.orderButton}
+                    />
                 </CardActions>
             </Card>
-            <OrderDialog onClose={toggleDialogState} open={isOpenDialog} />
         </React.Fragment>
     );
 }
