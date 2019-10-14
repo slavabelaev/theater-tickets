@@ -28,6 +28,15 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         showFullTextButton: {
             marginLeft: 'auto'
+        },
+        header: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+        },
+        createdAt: {
+            opacity: .5,
+            fontSize: theme.typography.fontSize
         }
     })
 );
@@ -35,12 +44,19 @@ const useStyles = makeStyles((theme: Theme) =>
 export function Comment({
     fullName,
     avatarUrl,
-    text
+    text,
+    createdAt
 }: CommentProps) {
-    const [showFullText, setShowFullText] = React.useState(false);
     const classes = useStyles();
+    const [showFullText, setShowFullText] = React.useState(false);
     const toggleShowFullText = () => setShowFullText(!showFullText);
 
+    const header = (
+        <div className={classes.header}>
+            <div>{fullName}</div>
+            <div className={classes.createdAt}>{createdAt.toDateString()}</div>
+        </div>
+    );
     return (
         <article>
             <ListItem component="div" alignItems="flex-start">
@@ -49,7 +65,7 @@ export function Comment({
                 </ListItemAvatar>
                 <Collapse in={showFullText} collapsedHeight="130px">
                     <ListItemText
-                        primary={fullName}
+                        primary={header}
                         secondary={text}
                     />
                 </Collapse>
