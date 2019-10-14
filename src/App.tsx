@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
 import Layout from "./components/Layout";
 import {withErrorBoundary} from "./components/ErrorBoundary";
 

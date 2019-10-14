@@ -1,0 +1,51 @@
+[debug] [2019-10-12T19:25:06.268Z] ----------------------------------------------------------------------
+[debug] [2019-10-12T19:25:06.272Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\belaevslava\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-10-12T19:25:06.272Z] CLI Version:   7.4.0
+[debug] [2019-10-12T19:25:06.272Z] Platform:      win32
+[debug] [2019-10-12T19:25:06.272Z] Node Version:  v10.16.0
+[debug] [2019-10-12T19:25:06.274Z] Time:          Sat Oct 12 2019 22:25:06 GMT+0300 (GMT+03:00)
+[debug] [2019-10-12T19:25:06.274Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-12T19:25:06.294Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-12T19:25:06.295Z] > authorizing via signed-in user
+[debug] [2019-10-12T19:25:06.296Z] [iam] checking project theater-tickets for permissions ["firebase.projects.get"]
+[debug] [2019-10-12T19:25:06.298Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-12T19:25:06.298Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-12T19:25:06.563Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-12T19:25:06.585Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/theater-tickets:testIamPermissions  
+
+[debug] [2019-10-12T19:25:06.945Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-12T19:25:06.948Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/theater-tickets  
+ 
+[debug] [2019-10-12T19:25:07.363Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'E:\firebase\theater-tickets'...
+[info] 
+[debug] [2019-10-12T19:25:07.378Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/theater-tickets/webApps/-/config  
+ 
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[info] +  functions: Emulator started at http://localhost:5001
+[debug] [2019-10-12T19:25:07.929Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "E:\firebase\theater-tickets\functions" for Cloud Functions...
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-10-12T19:25:08.630Z] [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:25:08.631Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:25:08.636Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:25:08.639Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:25:08.640Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Cannot find module 'E:\firebase\theater-tickets\functions'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at C:\Users\belaevslava\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:677:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\belaevslava\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:4:58)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:832:11)
+    at startup (internal/bootstrap/node.js:283:19)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.

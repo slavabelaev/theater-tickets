@@ -1,0 +1,395 @@
+[debug] [2019-10-12T19:39:05.636Z] ----------------------------------------------------------------------
+[debug] [2019-10-12T19:39:05.639Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\belaevslava\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js functions:shell
+[debug] [2019-10-12T19:39:05.640Z] CLI Version:   7.4.0
+[debug] [2019-10-12T19:39:05.640Z] Platform:      win32
+[debug] [2019-10-12T19:39:05.640Z] Node Version:  v10.16.0
+[debug] [2019-10-12T19:39:05.641Z] Time:          Sat Oct 12 2019 22:39:05 GMT+0300 (GMT+03:00)
+[debug] [2019-10-12T19:39:05.641Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-12T19:39:05.653Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-12T19:39:05.655Z] > authorizing via signed-in user
+[debug] [2019-10-12T19:39:05.655Z] [iam] checking project theater-tickets for permissions ["firebase.projects.get"]
+[debug] [2019-10-12T19:39:05.657Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/theater-tickets:testIamPermissions  
+
+[debug] [2019-10-12T19:39:06.084Z] <<< HTTP RESPONSE 200
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[info] +  functions: Emulator started at http://localhost:5000
+[debug] [2019-10-12T19:39:06.406Z] [functions] Watching "E:\firebase\theater-tickets\functions" for Cloud Functions...
+[debug] [2019-10-12T19:39:07.179Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:39:07.179Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:39:07.183Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:39:07.187Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:39:07.188Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Cannot find module './serviceAccountKey.json'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (E:\firebase\theater-tickets\functions\lib\index.js:5:24)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:39:19.536Z] Accepted request GET /theater-tickets/us-central1/helloWorld --> helloWorld
+[debug] [2019-10-12T19:39:20.185Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:39:20.185Z] [functions] Beginning execution of "helloWorld"
+[debug] [2019-10-12T19:39:20.185Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:39:20.191Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:39:20.194Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:39:20.195Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Cannot find module './serviceAccountKey.json'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (E:\firebase\theater-tickets\functions\lib\index.js:5:24)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:40:04.790Z] Accepted request GET /theater-tickets/us-central1/helloWorld --> helloWorld
+[debug] [2019-10-12T19:40:05.443Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:40:05.443Z] [functions] Beginning execution of "helloWorld"
+[debug] [2019-10-12T19:40:05.443Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:40:05.450Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:40:05.452Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:40:05.453Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Cannot find module './serviceAccountKey.json'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (E:\firebase\theater-tickets\functions\lib\index.js:5:24)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:40:07.778Z] Accepted request GET /theater-tickets/us-central1/helloWorld --> helloWorld
+[debug] [2019-10-12T19:40:08.420Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:40:08.421Z] [functions] Beginning execution of "helloWorld"
+[debug] [2019-10-12T19:40:08.421Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:40:08.426Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:40:08.430Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:40:08.431Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Cannot find module './serviceAccountKey.json'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (E:\firebase\theater-tickets\functions\lib\index.js:5:24)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:40:21.286Z] Accepted request GET /theater-tickets/us-central1/helloWorld --> helloWorld
+[debug] [2019-10-12T19:40:21.934Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:40:21.934Z] [functions] Beginning execution of "helloWorld"
+[debug] [2019-10-12T19:40:21.934Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:40:21.939Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:40:21.942Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:40:21.943Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Cannot find module './serviceAccountKey.json'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (E:\firebase\theater-tickets\functions\lib\index.js:5:24)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:40:24.134Z] Accepted request GET /theater-tickets/us-central1/helloWorld --> helloWorld
+[debug] [2019-10-12T19:40:24.757Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:40:24.757Z] [functions] Beginning execution of "helloWorld"
+[debug] [2019-10-12T19:40:24.757Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:40:24.763Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:40:24.765Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:40:24.767Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Cannot find module './serviceAccountKey.json'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (E:\firebase\theater-tickets\functions\lib\index.js:5:24)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:40:52.465Z] DEBUG: File E:\firebase\theater-tickets\functions\src\index.tsx changed, reloading triggers
+[debug] [2019-10-12T19:40:54.103Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:40:54.103Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:40:54.109Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:40:54.113Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:40:54.115Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Cannot find module './serviceAccountKey.json'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (E:\firebase\theater-tickets\functions\lib\index.js:5:24)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:40:54.832Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js.map changed, reloading triggers
+[debug] [2019-10-12T19:40:54.834Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js changed, reloading triggers
+[debug] [2019-10-12T19:40:56.477Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:40:56.477Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:40:56.483Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:40:56.486Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:40:56.487Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:40:56.572Z] [functions[helloWorld]] http function initialized (http://localhost:5000/theater-tickets/us-central1/helloWorld).
+[debug] [2019-10-12T19:40:56.572Z] [functions[createUser]] http function initialized (http://localhost:5000/theater-tickets/us-central1/createUser).
+[debug] [2019-10-12T19:40:58.494Z] Accepted request GET /theater-tickets/us-central1/helloWorld --> helloWorld
+[debug] [2019-10-12T19:40:59.166Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:40:59.167Z] [functions] Beginning execution of "helloWorld"
+[debug] [2019-10-12T19:40:59.167Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:40:59.172Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:40:59.174Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:40:59.176Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:40:59.265Z] DEBUG: [runtime-status] Trigger "helloWorld" has been found, beginning invocation! {}
+[debug] [2019-10-12T19:40:59.265Z] DEBUG: [runtime-status]  {"httpsTrigger":{},"name":"helloWorld","entryPoint":"helloWorld"}
+[debug] [2019-10-12T19:40:59.265Z] DEBUG: [runtime-status] Running helloWorld in mode HTTPS {}
+[debug] [2019-10-12T19:40:59.275Z] {"socketPath":"\\\\?\\pipe\\E:\\firebase\\theater-tickets\\functions\\252"}
+[debug] [2019-10-12T19:40:59.279Z] DEBUG: [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\E:\\firebase\\theater-tickets\\functions\\252"}
+[debug] [2019-10-12T19:40:59.289Z] DEBUG: [runtime-status] Ephemeral server used! {}
+[debug] [2019-10-12T19:40:59.301Z] DEBUG: [runtime-status] Ephemeral server survived. {}
+[debug] [2019-10-12T19:40:59.303Z] [functions] Finished "helloWorld" in ~1s
+[debug] [2019-10-12T19:41:08.274Z] DEBUG: File E:\firebase\theater-tickets\functions\src\index.tsx changed, reloading triggers
+[debug] [2019-10-12T19:41:09.925Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:41:09.925Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:41:09.930Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:41:09.933Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:09.934Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:10.338Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js.map changed, reloading triggers
+[debug] [2019-10-12T19:41:10.340Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js changed, reloading triggers
+[debug] [2019-10-12T19:41:11.193Z] Accepted request GET /theater-tickets/us-central1/helloWorld --> helloWorld
+[debug] [2019-10-12T19:41:11.857Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:41:11.857Z] [functions] Beginning execution of "helloWorld"
+[debug] [2019-10-12T19:41:11.857Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:41:11.863Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:41:11.865Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:11.867Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Cannot find module './serviceAccountKey.json'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (E:\firebase\theater-tickets\functions\lib\index.js:5:24)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:41:11.992Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:41:11.992Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:41:11.997Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:41:12.000Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:12.001Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Cannot find module './serviceAccountKey.json'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (E:\firebase\theater-tickets\functions\lib\index.js:5:24)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:41:30.884Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js.map changed, reloading triggers
+[debug] [2019-10-12T19:41:30.886Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js changed, reloading triggers
+[debug] [2019-10-12T19:41:32.604Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:41:32.604Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:41:32.610Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:41:32.614Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:32.616Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:34.573Z] DEBUG: File E:\firebase\theater-tickets\functions\src\index.tsx changed, reloading triggers
+[debug] [2019-10-12T19:41:36.228Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:41:36.229Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:41:36.234Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:41:36.237Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:36.238Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:36.346Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js.map changed, reloading triggers
+[debug] [2019-10-12T19:41:36.348Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js changed, reloading triggers
+[debug] [2019-10-12T19:41:37.403Z] Accepted request GET /theater-tickets/us-central1/helloWorld --> helloWorld
+[debug] [2019-10-12T19:41:38.047Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:41:38.047Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:41:38.057Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:41:38.061Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:38.063Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:38.071Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:41:38.072Z] [functions] Beginning execution of "helloWorld"
+[debug] [2019-10-12T19:41:38.072Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:41:38.080Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:41:38.084Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:38.086Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:38.294Z] DEBUG: [runtime-status] Trigger "helloWorld" has been found, beginning invocation! {}
+[debug] [2019-10-12T19:41:38.295Z] DEBUG: [runtime-status]  {"httpsTrigger":{},"name":"helloWorld","entryPoint":"helloWorld"}
+[debug] [2019-10-12T19:41:38.295Z] DEBUG: [runtime-status] Running helloWorld in mode HTTPS {}
+[debug] [2019-10-12T19:41:38.311Z] {"socketPath":"\\\\?\\pipe\\E:\\firebase\\theater-tickets\\functions\\2144"}
+[debug] [2019-10-12T19:41:38.314Z] DEBUG: [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\E:\\firebase\\theater-tickets\\functions\\2144"}
+[debug] [2019-10-12T19:41:38.326Z] DEBUG: [runtime-status] Ephemeral server used! {}
+[debug] [2019-10-12T19:41:38.336Z] DEBUG: [runtime-status] Ephemeral server survived. {}
+[debug] [2019-10-12T19:41:38.338Z] [functions] Finished "helloWorld" in ~1s
+[debug] [2019-10-12T19:41:40.585Z] Accepted request GET /theater-tickets/us-central1/helloWorld --> helloWorld
+[debug] [2019-10-12T19:41:41.244Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:41:41.244Z] [functions] Beginning execution of "helloWorld"
+[debug] [2019-10-12T19:41:41.244Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:41:41.250Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:41:41.253Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:41.254Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:41.420Z] DEBUG: [runtime-status] Trigger "helloWorld" has been found, beginning invocation! {}
+[debug] [2019-10-12T19:41:41.421Z] DEBUG: [runtime-status]  {"httpsTrigger":{},"name":"helloWorld","entryPoint":"helloWorld"}
+[debug] [2019-10-12T19:41:41.421Z] DEBUG: [runtime-status] Running helloWorld in mode HTTPS {}
+[debug] [2019-10-12T19:41:41.436Z] {"socketPath":"\\\\?\\pipe\\E:\\firebase\\theater-tickets\\functions\\6760"}
+[debug] [2019-10-12T19:41:41.438Z] DEBUG: [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\E:\\firebase\\theater-tickets\\functions\\6760"}
+[debug] [2019-10-12T19:41:41.449Z] DEBUG: [runtime-status] Ephemeral server used! {}
+[debug] [2019-10-12T19:41:41.457Z] DEBUG: [runtime-status] Ephemeral server survived. {}
+[debug] [2019-10-12T19:41:41.459Z] [functions] Finished "helloWorld" in ~1s
+[debug] [2019-10-12T19:41:50.316Z] Accepted request GET /theater-tickets/us-central1/createUser --> createUser
+[debug] [2019-10-12T19:41:50.997Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:41:50.998Z] [functions] Beginning execution of "createUser"
+[debug] [2019-10-12T19:41:50.998Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:41:51.004Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:41:51.007Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:51.008Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:41:51.183Z] DEBUG: [runtime-status] Trigger "createUser" has been found, beginning invocation! {}
+[debug] [2019-10-12T19:41:51.183Z] DEBUG: [runtime-status]  {"httpsTrigger":{},"name":"createUser","entryPoint":"createUser"}
+[debug] [2019-10-12T19:41:51.184Z] DEBUG: [runtime-status] Running createUser in mode HTTPS {}
+[debug] [2019-10-12T19:41:51.197Z] {"socketPath":"\\\\?\\pipe\\E:\\firebase\\theater-tickets\\functions\\15548"}
+[debug] [2019-10-12T19:41:51.199Z] DEBUG: [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\E:\\firebase\\theater-tickets\\functions\\15548"}
+[debug] [2019-10-12T19:41:51.210Z] DEBUG: [runtime-status] Ephemeral server used! {}
+[debug] [2019-10-12T19:41:51.310Z] DEBUG: [runtime-status] Ephemeral server survived. {}
+[debug] [2019-10-12T19:41:52.662Z] [functions] Finished "createUser" in ~1s
+[debug] [2019-10-12T19:42:38.300Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js.map changed, reloading triggers
+[debug] [2019-10-12T19:42:38.301Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js changed, reloading triggers
+[debug] [2019-10-12T19:42:39.952Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:42:39.953Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:42:39.959Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:42:39.961Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:42:39.963Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  E:\firebase\theater-tickets\functions\lib\index.js:15
+    const admin, auth;
+          ^^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at Module._compile (internal/modules/cjs/loader.js:721:23)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at C:\Users\belaevslava\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:677:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\belaevslava\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:4:58)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:42:41.213Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js.map changed, reloading triggers
+[debug] [2019-10-12T19:42:41.215Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js changed, reloading triggers
+[debug] [2019-10-12T19:42:43.077Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:42:43.077Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:42:43.083Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:42:43.086Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:42:43.087Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  E:\firebase\theater-tickets\functions\lib\index.js:15
+    const q;
+          ^
+
+SyntaxError: Missing initializer in const declaration
+    at Module._compile (internal/modules/cjs/loader.js:721:23)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at C:\Users\belaevslava\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:677:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\belaevslava\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:4:58)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:42:44.032Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js.map changed, reloading triggers
+[debug] [2019-10-12T19:42:44.033Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js changed, reloading triggers
+[debug] [2019-10-12T19:42:45.801Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:42:45.801Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:42:45.806Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:42:45.810Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:42:45.812Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  E:\firebase\theater-tickets\functions\lib\index.js:15
+    const quer;
+          ^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at Module._compile (internal/modules/cjs/loader.js:721:23)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at C:\Users\belaevslava\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:677:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\belaevslava\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:4:58)
+[warn] !  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-12T19:42:47.571Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js.map changed, reloading triggers
+[debug] [2019-10-12T19:42:47.572Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js changed, reloading triggers
+[debug] [2019-10-12T19:42:49.310Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:42:49.311Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:42:49.319Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:42:49.322Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:42:49.324Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:42:51.688Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js.map changed, reloading triggers
+[debug] [2019-10-12T19:42:51.689Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js changed, reloading triggers
+[debug] [2019-10-12T19:42:53.316Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:42:53.316Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:42:53.322Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:42:53.324Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:42:53.326Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:42:59.478Z] DEBUG: File E:\firebase\theater-tickets\functions\src\index.tsx changed, reloading triggers
+[debug] [2019-10-12T19:43:00.127Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js.map changed, reloading triggers
+[debug] [2019-10-12T19:43:00.128Z] DEBUG: File E:\firebase\theater-tickets\functions\lib\index.js changed, reloading triggers
+[debug] [2019-10-12T19:43:01.753Z] DEBUG: [runtime-status] Functions runtime initialized. {"cwd":"E:\\firebase\\theater-tickets\\functions","node_version":"10.16.0"}
+[debug] [2019-10-12T19:43:01.754Z] DEBUG: [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-12T19:43:01.758Z] DEBUG: [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-12T19:43:01.761Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-12T19:43:01.762Z] DEBUG: [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"E:\\firebase\\theater-tickets\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
