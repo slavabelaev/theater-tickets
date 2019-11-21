@@ -1,6 +1,6 @@
 import React from "react";
 import Form, {FormProps} from "./Form";
-import {Grid} from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 
 export interface OrderFormProps extends FormProps{}
 
